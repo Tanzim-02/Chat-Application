@@ -1,7 +1,8 @@
-function getLogin(req, res) {
-    res.render('index');
+// get login page
+function getLogin(req, res, next) {
+  res.render("index");
 }
 
 module.exports = {
-    getLogin
-}
+  getLogin,
+};

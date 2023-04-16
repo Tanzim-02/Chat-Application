@@ -11,12 +11,15 @@ const {
   errorHandler,
 } = require("./middlewares/common/errorHandler");
 
+
+
 const loginRouter = require("./router/loginRouter");
 const userRouter = require("./router/usersRouter");
 const inboxRouter = require("./router/inboxRouter");
 
 const app = express();
 dotenv.config();
+
 
 //database connection
 mongoose
@@ -41,6 +44,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //parse cookies
 app.use(cookieParser(process.env.COOKIE_SECRET));
+
+
 
 //routing setup
 app.use("/", loginRouter);

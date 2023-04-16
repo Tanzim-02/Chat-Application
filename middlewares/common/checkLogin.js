@@ -8,7 +8,7 @@ const checkLogin = (req, res, next) => {
 
   if (cookies) {
     try {
-      token = cookies[process.env.COOKIE_NAME];
+      let token = cookies[process.env.COOKIE_NAME];
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
       req.user = decoded;
 
